@@ -14,7 +14,7 @@ export function Cart({ navigation,route }) {
   
   function Totals() {
     let [total, setTotal] = useState(0);
-    
+    //mukesh
     // cart screen
     // return (
     //   <View style={styles.cartLineTotal}>
