@@ -13,7 +13,7 @@ export function CartProvider(props) {
               id,
               qty: 1,
               product,
-              totalPrice: product.price 
+              totalPrice: product.price ,
           }];
       }
       else { 

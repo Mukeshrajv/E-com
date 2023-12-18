@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import { View, Text,  StyleSheet, FlatList } from 'react-native';
+import { View, Text,Image,  StyleSheet, FlatList,Platform } from 'react-native';
 import { Product } from '../components/Product.js';
 import { getProducts } from '../services/ProductsService.js';
+
 export function ProductsList ({navigation}) {
 function renderProduct({item: product}) {
     return (
@@ -22,30 +23,57 @@ function renderProduct({item: product}) {
   });
 
   return (
-    
     <FlatList
       style={styles.productsList}
       contentContainerStyle={styles.productsListContainer}
-      keyExtractor={(item) => item.id.toString()}
+      key={"item"}
+      keyExtractor={(item) =>"item"+ item.id}
       data={products}
-      renderItem={renderProduct} 
-      // horizontal
-      numColumns={2}
+      numColumns={ Platform.OS === 'web' ? 3 : 1}
+      renderItem={renderProduct}
       />
-     
   );
 }
 const styles = StyleSheet.create({
   productsList: {
-    flex:1,
-    backgroundColor: '#eeeeee',
-    width:'100%',
-  
+    ...Platform.select({
+      android: {
+        flex:1,
+        backgroundColor: '#eeeeee',
+        width:'100%',
+      },
+      ios: {
+        flex:1,
+        backgroundColor: '#eeeeee',
+        width:'100%',
+      },
+      default: {
+        flex:1,
+        backgroundColor: '#eeeeee',
+        width:'100%',
+      },
+    }),
   },
   productsListContainer: {
-    backgroundColor: '#eeeeee',
-    paddingVertical: 8,
-    // marginHorizontal: 12,
-  
+    ...Platform.select({
+      android: {
+        backgroundColor: '#eeeeee',
+        paddingVertical: 8,
+        width:'100%',
+      },
+      ios: {
+        backgroundColor: '#eeeeee',
+        paddingVertical: 8,
+        width:'100%',
+      },
+      default: {
+        // other platforms, web for example
+        backgroundColor: '#eeeeee',
+        paddingVertical: 8,
+        width:'67%',
+      },
+    }),
   },
 });
+
+ 

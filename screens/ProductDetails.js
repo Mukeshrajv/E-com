@@ -26,26 +26,35 @@ export function ProductDetails({route}) {
 
   return (
     <SafeAreaView>
-      <ScrollView>
+      <ScrollView style={styles.view}>
         <Image
           style={styles.image}
           source={product.image}
         />
         <View style={styles.infoContainer}>
           <Text style={styles.name}>{product.name}</Text>
+          <View style={styles.contain}>
+            <View>
+          <Text style={styles.pricelabel}>Price</Text>
           <Text style={styles.price}>$ {product.price}</Text>
+          </View>
+          <View>  
+          <Text style={styles.text} 
+        onPress={onAddToCart}
+      >Add to Cart</Text>
+            </View>
+          </View>
+          <Text style={styles.pricelabel}>Description</Text>
           <Text style={styles.description}>{product.description}</Text>
-            <Button
-            onPress={onAddToCart}
-            title="Add to cart"
-            />
-          
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
+  view:{
+    backgroundColor: 'white',
+  },
   card: {
     backgroundColor: 'white',
     borderRadius: 16,
@@ -66,20 +75,41 @@ const styles = StyleSheet.create({
   },
   infoContainer: {
     padding: 16,
+    backgroundColor:'#FFFFFF',
   },
   name: {
-    fontSize: 22,
+    fontSize: 25,
     fontWeight: 'bold',
+    marginBottom:35,
+    color:'#2a2e7e',
   },
   price: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: '600',
     marginBottom: 8,
+    color:'#2a2e7e',
   },
   description: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: '400',
-    color: '#787878',
+    color:'#2a2e7e',
     marginBottom: 16,
+  },
+  contain:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom:25,
+  },
+  pricelabel:{
+    fontSize: 18,
+    color:'#ce2226',
+  },
+  text: {
+    color: 'white',
+    // fontWeight: 'bold',
+    fontSize:20,
+    backgroundColor:'#ce2226',
+    padding:15,
+    borderRadius:20,
   },
 });

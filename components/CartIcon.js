@@ -27,4 +27,8 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
   },
+  MyPro:{
+    backgroundColor: '#ffa500',
+
+  }
 });

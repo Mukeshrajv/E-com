@@ -1,222 +1,55 @@
 const PRODUCTS = [
     {
         id: 100,
-        name: 'Apple',
-        price: 350,
-        image: require('../assets/puluthi.png'),
-        description: 'A headset combines a headphone with microphone. Headsets are made with either a single-earpiece (mono) or a double-earpiece (mono to both ears or stereo).'
+        name: 'Big Tex Fillet with CRYO (BL707C)',
+        price:32.95,
+        // image: require('../assets/app.png'),
+        image: {uri:'https://www.texasknife.com/assets/images/texantool/product/BL544.jpg'},
+        description: 'Texas Sized Fillet Blade. CRYOGENICALLY TEMPERED to -3050F, high carbon stainless steel blade. 16&quot; overall length, 1/16&quot; thick with 10-1/2&quot; cutting edge. Blade is 3/4&quot; wide. Use three 5/32&quot; pins. Satin finished and hollow ground. Sure to help out with those bigger than average fish. Use extra long SHEATH #SHE-TEX.'
     },
     {
         id: 101,
-        name: 'Iphone',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+        name: 'Favorite Chefs Santoku with  CRYO (BL547)',
+        price: 19.95,
+        image: {uri:'https://www.texasknife.com/assets/images/texantool/product/BL547C.jpg'},
+        description: 'Japanese style blade. 10-3/4&quot; overall, 6&quot; blade, 5/32&quot; diameter holes for pins, made of 8A high carbon stainless. Cryogenically treated.'
     },
     {
         id: 102,
-        name: 'Applei',
-        price: 2,
-        image: require('../assets/Applei.png'),
-        description: 'A cupcake (also British English: fairy cake; Hiberno-English: bun; Australian English: fairy cake or patty cake[1]) is a small cake designed to serve one person.'
+        name: 'New Guides Skinner with Brass Bolsters CRYO (BL483C)',
+        price: 27.45,
+        image:{uri:'https://www.texasknife.com/assets/images/texantool/product/BL483e_550.jpg'},
+        description: '9-1/2&nbsp;overall length, 3-7/8&nbsp;hollow ground blade, 1-1/8&nbsp;wide, and a full 1/8&nbsp;thick and is made of 440C. CRYOGENICALLY TREATED to enhance edge holding properties. Kit includes two brass bolsters, six 0.119&nbsp;pins (use an 1/8&quot; drill bit for your handle material), and 0.355&quot; thong hole tube (use 3/8&quot; drill bit). SHE2, and SHE2B will fit this knife.'
     },
     {
         id: 103,
-        name: '13pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+        name: 'Favorite Utility Paring Blade with CRYO (BL476C)',
+        price: 19.95,
+        image:{uri:'https://www.texasknife.com/assets/images/texantool/product/BL476C2.jpg'},
+        description: '7-1/2&quot; overall length, 7/8&quot; wide, 3-1/2&quot; long blade and 5/64&quot; thick 440C stainless steel. Fine satin finish that easily polishes. CRYOGENICALLY TREATED to enhance its edge holding properties. The handle is punched with holes for three 1/8&quot; pins and two 5/16&quot; holes for bolts. These are fine blades and very useful. This blade along with the Cook&#39;s Favorite and the Mid Size Chef make a nice set of three.'
     },
     {
         id: 104,
-        name: '14pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+        name: 'Favorite Mid Size Chef Blade with CRYO (BL531C)',
+        price: 20.95,
+        image: {uri:'https://www.texasknife.com/assets/images/texantool/product/BL531C.jpg'},
+        description: '10-1/2&quot; overall length, 5-7/8&quot; long blade, 5/64&quot; thick, 1-3/8&quot; wide. Fine satin finish and flat ground, superior 440C stainless steel. CRYOGENICALLY TREATED to enhance its edge holding properties. Three holes for 5/32&quot; pin material and two larger (7/16&quot;) holes for bolts. This blade along with the Cook&#39;s Favorite and the Utility Paring blade make a nice set of three.'
     },
     {
         id: 105,
-        name: '13 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+        name: 'Kirinite Liquid Gold 3/8\" Scales',
+        price: 29.95,
+        image: {uri:'https://www.texasknife.com/assets/images/texantool/product/KLG2S_550.jpg'},
+        description: 'KiriniteTM Liquid Gold 3/8&quot; Scales. Very durable material with intense depth and color. Easy to work....... just sand and buff to a fine finish. Use buffing compound # ABRPN40 for a super finish http://www.texasknife.com/vcom/product_info.php products_id=589 This is the best acrylic material we have ever used. Scale size: 5&quot; x 1-1/2&quot; x 3/8&quot;'
     },
     {
         id: 106,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+        name: 'Texas Bay Fillet with CRYO (BL544C)',
+        price: 27.95,
+        image: {uri:'https://www.texasknife.com/assets/images/texantool/product/BL544.jpg'},
+        description: 'AUS8 Cryogenically Treated - 12&quot; Fillet ,1/8&quot; Handle Pins'
     },
-    {
-        id: 107,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 108,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 109,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 110,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 111,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 112,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 113,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 114,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 115,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 116,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 117,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 118,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 119,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 120,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 121,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 122,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 123,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 124,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 125,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 126,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 127,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 128,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 129,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 130,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 131,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 132,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 133,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },{
-        id: 134,
-        name: '14 pro',
-        price: 600,
-        image: require('../assets/Iphone.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
-    },
+   
 ];
 export function getProducts() {
     return PRODUCTS;
