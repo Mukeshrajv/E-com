@@ -3,15 +3,19 @@ import { View, Text, Button, FlatList, StyleSheet, Image, Platform, Pressable } 
 import { CartContext } from '../CartContext';
 import { AntDesign } from '@expo/vector-icons';
 import { getProduct } from '../services/ProductsService.js';
-export function Cart({ navigation,route }) {
+import { useSelector, useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
+import { increment,decrement } from '../Action/counter.js';
+export function Cart({ navigation,qty,increment,decrement }) {
   const { items, setItems,getItemsCount, getTotalPrice ,price,isCartItem,addItemToCart} = useContext(CartContext);
   const [item, setItem] = useState([]);
   // const { productId } = route.params;
   const [product, setProduct] = useState({});
  
   // const { addItemToCart } = useContext(CartContext);
-
-  
+ 
+  // const cart=useSelector((state)=>state.item.item);
+  // console.log(cart);
   function Totals() {
     let [total, setTotal] = useState(0);
     //mukesh
@@ -39,30 +43,33 @@ export function Cart({ navigation,route }) {
     setTotal(getTotalPrice());
     // setProduct(getProduct(productId));
   });
+  // function onAddToCart() {
+  //   // const product = getProduct(id);
+  //   setItems((prevItems) => {
+  //     const item = prevItems.find((item) => (item.id == id));
+  //     if(!item) {
+  //         return [...prevItems, {
+  //             id,
+  //             qty: 1,
+  //             product,
+  //             totalPrice: product.price ,
+  //         }];
+  //     }
+  //     else { 
+  //         return prevItems.map((item) => {
+  //           if(item.id == id) {
+  //             item.qty++;
+  //             item.totalPrice += product.price;
+  //           }
+  //           return item;
+  //         });
+  //     }
+  //   });
+  // }
   function onAddToCart() {
-    // const product = getProduct(id);
-    setItems((prevItems) => {
-      const item = prevItems.find((item) => (item.id == id));
-      if(!item) {
-          return [...prevItems, {
-              id,
-              qty: 1,
-              product,
-              totalPrice: product.price ,
-          }];
-      }
-      else { 
-          return prevItems.map((item) => {
-            if(item.id == id) {
-              item.qty++;
-              item.totalPrice += product.price;
-            }
-            return item;
-          });
-      }
-    });
+    addItemToCart(product.id);
   }
-
+  
 
   function renderItem({ item }) {
     return (
@@ -70,11 +77,11 @@ export function Cart({ navigation,route }) {
         <View style={styles.icon}>
           <Image style={styles.image} source={item.product.image} />
           <View style={styles.increment}>
-            <Pressable >
+            <Pressable onPress={decrement}>
               <AntDesign name="minuscircleo" size={24} color="black" />
             </Pressable>
             <Text>{item.qty}</Text>
-            <Pressable  onPress={onAddToCart}>
+            <Pressable  onPress={getItemsCount}>
               <AntDesign name="pluscircleo" size={24} color="black" />
             </Pressable>
           </View>
@@ -119,6 +126,14 @@ export function Cart({ navigation,route }) {
     </>
   );
 }
+const mapState=(state)=>({
+  qty:state.counter.qty,
+});
+
+const mapDispatch={
+increment,
+decrement,
+};
 const styles = StyleSheet.create({
   cartLine: {
     ...Platform.select({
@@ -401,3 +416,5 @@ const styles = StyleSheet.create({
     width: '60%',
   },
 });
+
+// export default connect(mapState,mapDispatch) (Cart);

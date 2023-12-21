@@ -13,15 +13,17 @@ import { Login } from './screens/Login.js';
 import { AuthProvider } from './screens/context/AuthContext.js';
 import { MyPro } from './screens/MyPro.js';
 import { Provider } from 'react-redux';
-import { store } from './store.js';
+// import { store } from './store.js';
 import { TabNavigator } from './screens/TabNavigator.js';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import store from './store.js';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const Products = () => {
   return (
+    <Provider store={store}>
     <Tab.Navigator
     screenOptions={{
       tabBarShowLabel:false,
@@ -51,7 +53,7 @@ const Products = () => {
       <Tab.Screen name="Cart" component={Cart}
       
         options={{
-          tabBarIcon: ({ focused }) => (
+          tabBarIcon: ({ focused}) => (
             <View style={{ alignItems: 'center', justifyContent: 'center' }} >
               <Image
                 source={require('./assets/car.png')}
@@ -82,6 +84,7 @@ const Products = () => {
           ),
         }} />
     </Tab.Navigator>
+    </Provider>
   );
 }
 

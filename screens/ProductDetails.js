@@ -10,6 +10,9 @@ import {
   } from 'react-native';
 import { getProduct } from '../services/ProductsService.js';
 import { CartContext } from '../CartContext';
+import { increment,decrement } from '../Action/counter.js';
+import { connect } from 'react-redux';
+
 export function ProductDetails({route}) {
   const { productId } = route.params;
   const [product, setProduct] = useState({});
@@ -37,7 +40,7 @@ export function ProductDetails({route}) {
             <View>
           <Text style={styles.pricelabel}>Price</Text>
           <Text style={styles.price}>$ {product.price}</Text>
-          </View>
+          </View> 
           <View>  
           <Text style={styles.text} 
         onPress={onAddToCart}
@@ -51,6 +54,14 @@ export function ProductDetails({route}) {
     </SafeAreaView>
   );
 }
+const mapState=(state)=>({
+  qty:state.counter.qty,
+});
+
+const mapDispatch={
+increment,
+decrement,
+};
 const styles = StyleSheet.create({
   view:{
     backgroundColor: 'white',
@@ -113,3 +124,4 @@ const styles = StyleSheet.create({
     borderRadius:20,
   },
 });
+export default connect(mapState,mapDispatch) (ProductDetails);

@@ -49,7 +49,6 @@ import withReactContent from 'sweetalert2-react-content'
                    ToastAndroid.show('registration successfully', ToastAndroid.TOP,
                    backgroundColor="red",
                   textColor="white")
-
               }else{
               Swal.fire(
                 'Good job!',
